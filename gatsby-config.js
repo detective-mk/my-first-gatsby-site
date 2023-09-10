@@ -3,37 +3,20 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `my-first-gatsby-site`,
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: "https://www.yourdomain.tld",
+    title: "My First Gatsby Site",
   },
   plugins: [
     "gatsby-plugin-image",
-    "gatsby-plugin-sitemap",
+    "gatsby-plugin-sharp",
     {
-      resolve: "gatsby-plugin-manifest",
+      resolve: "gatsby-source-filesystem",
       options: {
-        icon: "src/images/icon.png",
+        name: `blog`,
+        path: `${__dirname}/blog`,
       },
     },
     "gatsby-plugin-mdx",
-    "gatsby-transformer-remark",
-    "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "images",
-        path: "./src/images/",
-      },
-      __key: "images",
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "pages",
-        path: "./src/pages/",
-      },
-      __key: "pages",
-    },
   ],
 };
